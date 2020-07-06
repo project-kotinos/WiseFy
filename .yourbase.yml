@@ -7,7 +7,7 @@ build_targets:
   - ./gradlew :wisefy:jacocoDebugUnitTest :wisefysample:jacocoDebugUnitTest --stacktrace
   - ./gradlew :wisefy:jacocoDebugCombinedTestReport :wisefysample:jacocoDebugCombinedTestReport --stacktrace
   container:
-    image: circleci/android:api-29
+    image: yourbase/yb_ubuntu:18.04
   name: default
 
 ci:
