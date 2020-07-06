@@ -18,3 +18,4 @@ dependencies:
   build:
   - java:11.0.6
   - gradle:6.5.1
+  - android_sdk:latest
