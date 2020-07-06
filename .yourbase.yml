@@ -1,0 +1,20 @@
+build_targets:
+- commands:
+  - sudo chmod +x ./gradlew
+  - ./gradlew androidDependencies
+  - ./gradlew clean assembleDebug wisefy:assembleDebugAndroidTest wisefysample:assembleDebugAndroidTest --stacktrace
+  - ./gradlew staticAnalysisSanityCheck
+  - ./gradlew :wisefy:jacocoDebugUnitTest :wisefysample:jacocoDebugUnitTest --stacktrace
+  - ./gradlew :wisefy:jacocoDebugCombinedTestReport :wisefysample:jacocoDebugCombinedTestReport --stacktrace
+  container:
+    image: yourbase/yb_ubuntu:18.04
+  name: default
+
+ci:
+  builds:
+  - build_target: default
+    name: default
+dependencies:
+  build:
+  - java:11.0.6
+  - gradle:6.5.1
