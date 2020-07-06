@@ -1,6 +1,6 @@
 build_targets:
 - commands:
-  - sudo chmod +x ./gradlew
+  - chmod +x ./gradlew
   - ./gradlew androidDependencies
   - ./gradlew clean assembleDebug wisefy:assembleDebugAndroidTest wisefysample:assembleDebugAndroidTest --stacktrace
   - ./gradlew staticAnalysisSanityCheck
