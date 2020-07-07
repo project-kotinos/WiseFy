@@ -3,7 +3,6 @@ build_targets:
   - chmod +x ./gradlew
   - ./gradlew androidDependencies
   - ./gradlew clean assembleDebug wisefy:assembleDebugAndroidTest wisefysample:assembleDebugAndroidTest --stacktrace
-  - ./gradlew staticAnalysisSanityCheck
   - ./gradlew :wisefy:jacocoDebugUnitTest :wisefysample:jacocoDebugUnitTest --stacktrace
   - ./gradlew :wisefy:jacocoDebugCombinedTestReport :wisefysample:jacocoDebugCombinedTestReport --stacktrace
   container:
